@@ -60,7 +60,7 @@
 
 // Fade sections and images in as they scroll into view
 (function () {
-  const targets = document.querySelectorAll('.section__head, .prose, .ph, .subhead, .opendoor');
+  const targets = document.querySelectorAll('.block, .ph:not(.hero), .caption');
   if (!('IntersectionObserver' in window)) return;
   targets.forEach((el) => el.classList.add('reveal'));
   const io = new IntersectionObserver((entries) => {
@@ -76,7 +76,7 @@
 
 // Highlight the current section in the sticky nav
 (function () {
-  const links = Array.from(document.querySelectorAll('.chapters a'));
+  const links = Array.from(document.querySelectorAll('.topbar__nav a'));
   const sections = links.map((a) => document.querySelector(a.getAttribute('href')));
   if (!('IntersectionObserver' in window)) return;
   const io = new IntersectionObserver((entries) => {
